@@ -15,7 +15,7 @@
 #define LOWER 1
 #define RAISE 2
 #define DOTA 3
-#define CONF 3
+#define CONF 4
 
 / {
 	keymap {
