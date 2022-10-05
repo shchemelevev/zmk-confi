@@ -17,4 +17,5 @@ include:
     shield: iris_left
   - board: nice_nano_v2
     shield: iris_right
-
+  - board: nice_nano_v2
+    shield: settings_reset
