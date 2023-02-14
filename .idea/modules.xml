@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/zmk-confi.iml" filepath="$PROJECT_DIR$/.idea/zmk-confi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zmk-redox/.idea/zmk-redox.iml" filepath="$PROJECT_DIR$/../zmk-redox/.idea/zmk-redox.iml" />
     </modules>
   </component>
 </project>
