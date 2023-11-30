@@ -83,9 +83,9 @@
 		lower_layer {
 			bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-    &kp TILDE    &kp N1    &kp N2     &kp N3     &kp N4    &to  CONF         &kp F6      &kp F7      &kp F8      &kp F9     &kp F10    &kp BSPC
+    &kp TILDE    &kp LC(LS(N6)) &kp LC(LS(N7))    &kp LC(LS(N8))  &kp LC(LS(N9))  &to  CONF         &kp F6      &kp F7      &kp F8      &kp F9     &kp F10    &kp BSPC
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-    &kp LA(TAB)  &kp LC(LS(N1)) &kp LC(LS(N2))    &kp LC(LS(N3))  &kp LC(LS(N4))  xxx           xxx        &kp PAGE_UP &kp PAGE_DOWN  xxx      xxx        xxx
+    &kp LA(TAB)  &kp LC(LS(N1)) &kp LC(LS(N2))    &kp LC(LS(N3))  &kp LC(LS(N4))  &kp LC(LS(N5)) xxx        &kp PAGE_UP &kp PAGE_DOWN  xxx      xxx        xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
     &kp LA(TAB)  &kp HOME   &kp END    &kp LG(TILDE)  &kp LC(TAB)  &kp LA(TAB)   &kp LEFT    &kp DOWN    &kp UP     &kp RIGHT   xxx        xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
