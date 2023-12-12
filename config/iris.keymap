@@ -83,9 +83,9 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
       xxx         &kp Q     &kp W      &kp E      &kp R      &kp T          &kp Y       &kp U       &kp I       &kp O      &kp P     &kp SQT
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-      xxx      &bhm LSHIFT A &bhm LALT S  &bhm LGUI D &bhm LCTRL F &kp G     &kp H   &bhm LCTRL J &bhm LGUI K  &bhm LALT L  &bhm RSHIFT SEMI  &kp RSHFT
+      xxx      &bhm LSHIFT A &bhm LALT S  &bhm LGUI D &bhm LCTRL F &kp G     &kp H   &bhm LCTRL J &bhm LGUI K  &bhm LALT L  &bhm RSHIFT SEMI  xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-     &kp LCTRL    &kp Z     &kp X      &kp C      &kp V      &kp B  ___ ___ &kp N       &kp M      &kp COMMA    &kp DOT    &kp FSLH  &kp RET
+     &kp LCTRL    &kp Z     &kp X      &kp C      &kp V      &kp B  ___ ___ &kp N       &kp M      &kp COMMA    &kp DOT    &kp FSLH  xxx
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
                                   &kp TAB  &lhm LOWER SPACE  &kp ESC     &kp BSPC    &lhm RAISE RET  &kp ESC
 //                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
