@@ -63,6 +63,16 @@
             bindings = <&kp>, <&kp>;
         };
   };
+  behaviors {
+        lhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        };
+  };
 
 	keymap {
 		compatible = "zmk,keymap";
@@ -79,7 +89,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
      &kp LCTRL    &kp Z     &kp X      &kp C      &kp V      &kp B  ___ ___ &kp N       &kp M      &kp COMMA    &kp DOT    &kp FSLH  &kp RET
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
-                                  &kp ESC  &bhm LOWER SPACE  &kp TAB      &kp RET    &bhm RAISE BSPC  &kp ESC
+                                  &kp ESC  &lhm LOWER SPACE  &kp TAB      &kp RET    &lhm RAISE BSPC  &kp ESC
 //                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
 			>;
 		};
