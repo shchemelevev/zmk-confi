@@ -27,6 +27,7 @@
 #define LOWER 2
 #define RAISE 3
 #define CONF 4
+#define NUM 4
 
 / {
     macros {
@@ -59,7 +60,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
         lhm: balanced_homerow_mods2 {
@@ -67,7 +68,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <220>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
   };
