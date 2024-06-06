@@ -86,7 +86,7 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
       xxx         &kp Q     &kp W      &kp E      &kp R      &kp T          &kp Y       &kp U       &kp I       &kp O      &kp P      xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-      xxx      &bhm LSHIFT A &bhm LALT S  &bhm NOWKEY D &bhm LCTRL F &kp G     &kp H   &bhm LCTRL J &bhm LGUI K  &bhm LALT L  &bhm RSHIFT SEMI  xxx
+      xxx      &bhm LSHIFT A &bhm LALT S  &lhm NOWKEY D &bhm LCTRL F &kp G     &kp H   &bhm LCTRL J &bhm LGUI K  &bhm LALT L  &bhm RSHIFT SEMI  xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
      &kp LCTRL    &kp Z     &kp X      &kp C      &kp V      &kp B  ___ ___ &kp N       &kp M      &kp COMMA    &kp DOT    &kp FSLH  xxx
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
@@ -182,13 +182,13 @@
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
       xxx         &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0     xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-      xxx         &kp LGUI(Q)     xxx      &kp LGUI(E)      &kp LGUI(R)      &kp LGUI(T)          &kp LGUI(Y)       &kp LGUI(U)       &kp LGUI(I)       &kp LGUI(O)      &kp LGUI(P)      xxx
+      xxx      &kp LG(Q)   xxx   &kp LG(E)        &kp LG(R)      &kp LG(T)          &kp LG(Y)       &kp LG(U)       &kp LG(I)       &kp LG(O)      &kp LG(P)      xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-      xxx      &bhm LSHIFT LGUI(A) &bhm LALT LGUI(S)  &kp LGUI(D) &kp LGUI(F) &kp LGUI(G)     &kp LGUI(H)      &kp LGUI(J)      &kp LGUI(K)       &kp LGUI(L)       &kp LGUI(SEMI)   xxx
+      xxx      &bhm LSHIFT LG(A) &bhm LALT LG(S)  &kp LG(D) &kp LG(F) &kp LG(G)     &kp LG(H)      &kp LG(J)      &kp LG(K)       &kp LG(L)       &kp LG(SEMI)   xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-     &kp LCTRL    &kp LGUI(Z)     &kp LGUI(X)      &kp LGUI(C)      &kp LGUI(V)      &kp LGUI(B)  ___ ___ &kp LGUI(N)       &kp LGUI(M)      &kp LGUI(COMMA)    &kp LGUI(DOT)    &kp LGUI(FSLH)  xxx
+     &kp LCTRL    &kp LG(Z)     &kp LG(X)      &kp LG(C)      &kp LG(V)      &kp LG(B)  ___ ___ &kp LG(N)       &kp LG(M)      &kp LG(COMMA)    &kp LG(DOT)    &kp LG(FSLH)  xxx
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
-                                  &kp LGUI(TAB)  &lhm LOWER LGUI(ESC)  &kp LGUI(SPACE)     &kp LGUI(SPACE)    &lhm RAISE LGUI(RET)  &kp BSPC
+                                  &kp LG(TAB)  &lhm LOWER LG(ESC)  &kp LG(SPACE)     &kp LG(SPACE)    &lhm RAISE LG(RET)  &kp BSPC
 //                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
 			>;
 		};
