@@ -68,6 +68,7 @@
   behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
             flavor = "balanced";
@@ -83,6 +84,7 @@
         };
         zhm: tap_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             tapping-term-ms = <400>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
