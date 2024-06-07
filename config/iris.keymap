@@ -83,9 +83,10 @@
         };
         zhm: balanced_homerow_mods2 {
             compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            tapping-term-ms = <400>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
+              require-prior-idle-ms = <125>;
             bindings = <&mo>, <&kp>;
         };
   };
