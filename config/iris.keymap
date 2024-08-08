@@ -27,14 +27,14 @@
 #define LOWER 2
 #define RAISE 3
 #define CONF 4
-#define NUM 5
+#define BT 5
 #define NOWKEY 6
+#define NUM 7
 
 
 / {
     macros {
         zed_to_bt0: zed_to_bt0 {
-            label = "ZM_zed_to_bt0";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -43,7 +43,6 @@
                 ;
         };
         zed_to_bt1: zed_to_bt1 {
-            label = "ZM_zed_to_bt1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -52,7 +51,6 @@
                 ;
         };
         dw_mac: dw_mac {
-            label = "ZM_dw_mac";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -61,25 +59,21 @@
                 ;
         };
         tmux0: tmux0{
-            label = "ZM_tmux0";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(B)>, <&kp N0>;
         };
         tmux1: tmux1{
-            label = "ZM_tmux1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(B)>, <&kp N1>;
         };
         tmux2: tmux2{
-            label = "ZM_tmux2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(B)>, <&kp N2>;
         };
         tmux3: tmux3{
-            label = "ZM_tmux3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(B)>, <&kp N3>;
@@ -93,7 +87,7 @@
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            tapping-term-ms = <300>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -115,32 +109,40 @@
             require-prior-idle-ms = <125>;
             bindings = <&mo>, <&kp>;
         };
+        btp: bluetooth_clear_protection {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <1000>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&bt>, <&kp>;
+        };
   };
 
-	keymap {
-		compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
 
-		default_layer {
+    default_layer {
 
-			bindings = <
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-      xxx         &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0     xxx
+      xxx         &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0     &kp N0
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
       xxx         &kp Q     &kp W      &kp E      &kp R      &kp T          &kp Y       &kp U       &kp I       &kp O      &kp P      xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-      xxx      &bhm LSHIFT A &bhm LALT S  &zhm NOWKEY D &bhm LCTRL F &kp G     &kp H   &bhm LCTRL J &bhm LGUI K  &bhm LALT L  &bhm RSHIFT SEMI  xxx
+      xxx    &bhm LSHIFT A &bhm LALT S  &bhm LGUI D &bhm LCTRL F &kp G     &kp H   &bhm LCTRL J &bhm LGUI K  &bhm LALT L  &bhm RSHIFT SEMI  xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
-     &kp LCTRL    &kp Z     &kp X      &kp C      &kp V      &kp B  ___ ___ &kp N       &kp M      &kp COMMA    &kp DOT    &kp FSLH  xxx
+      xxx         &kp Z     &kp X      &kp C      &kp V      &kp B  ___ ___ &kp N       &kp M      &kp COMMA    &kp DOT    &kp FSLH  xxx
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
-                                  &kp TAB  &lhm LOWER ESC  &kp SPACE     &kp SPACE    &lhm RAISE RET  &kp BSPC
+                                  &kp TAB  &lhm LOWER ESC  &lhm NUM SPACE     &kp SPACE    &lhm RAISE RET  &kp BSPC
 //                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
-			>;
-		};
+      >;
+    };
 
-		win_layer {
-			bindings = <
+    win_layer {
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-     &kp ESC      &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0    &kp BSPC
+     &kp ESC      &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0    &bhm N1 BSPC
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
      &kp TAB      &kp Q     &kp W      &kp E      &kp R      &kp T          &kp Y       &kp U       &kp I       &kp O      &kp P     &kp SQT
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
@@ -150,13 +152,13 @@
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
                                        &kp LALT    &mo LOWER   &kp SPACE      &kp SPACE    &mo RAISE     &kp LG(SPACE)
 //                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
-			>;
-		};
+      >;
+    };
 
-		lower_layer {
-			bindings = <
+    lower_layer {
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-    &kp TILDE    ph6        ph7        ph8        ph9      &to  CONF         &tmux0      &tmux1      &tmux2      &tmux3     &kp F10    &kp BSPC
+    &kp TILDE    ph6        ph7        ph8        ph9      &to  CONF         &tmux0      &tmux1      &tmux2      &tmux3     &kp F10    &bhm N2 BSPC
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
     &kp LA(TAB)  ph1        ph2        ph3        ph4        ph5             xxx        &kp PAGE_UP &kp PAGE_DOWN  xxx      xxx        xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
@@ -164,15 +166,15 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
        xxx       nvtc        xxx      &kp LG(LBKT)  &kp LG(B) nvtc    ___ ___ xxx       &kp LG(LBKT) &kp LG(B)  xxx        xxx        xxx
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
-                                       xxx        xxx        xxx            xxx         xxx         xxx
+                                      &bootloader  xxx       &sys_reset       xxx         xxx         xxx
 //                                  └──────────┴──────────┴──────────┘   └───────────┴───────────┴───────────┘
-			>;
-		};
+      >;
+    };
 
-		raise_layer {
-			bindings = <
+    raise_layer {
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-    &kp TILDE    &kp N1    &kp N2     &kp N3     &kp N4    &to  CONF        &kp F6     &kp P        &kp F8      &kp F9     &kp F10   &kp BSPC
+    &kp TILDE    &kp N1    &kp N2     &kp N3     &kp N4    &to  CONF        &kp F6     &kp P        &kp F8      &kp F9     &kp F10   &bhm N3 BSPC
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
    &kp LA(TAB)   xxx        xxx        xxx        xxx       xxx             &kp TILDE  &kp UNDER    &kp PLUS    &kp LBKT      &kp RBKT   xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
@@ -180,16 +182,16 @@
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
       xxx        xxx        xxx        xxx        xxx        xxx    ___ ___ &kp PIPE   &kp LBKT    &kp RBKT    &kp LBRC    &kp BSLH   xxx
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
-                                       xxx        xxx        xxx            xxx         xxx         xxx
+                                       xxx        xxx        xxx            &sys_reset      xxx       &bootloader
 //                                  └──────────┴──────────┴──────────┘   └───────────┴───────────┴───────────┘
-			>;
-		};
+      >;
+    };
 
 
-		conf_layer {
-			bindings = <
+    conf_layer {
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-    &kp TILDE    &bt BT_SEL 0   &bt BT_SEL 1     &to DEFAULT  &to WIN     &to  CONF       xxx         xxx         xxx         xxx        xxx        xxx
+    &kp TILDE    &bt BT_SEL 0   &bt BT_SEL 1     &to DEFAULT  &to WIN     &to  CONF       xxx         xxx         xxx         xxx        xxx        &kp N4
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
      xxx         xxx        xxx        xxx        xxx        xxx            xxx         xxx         xxx         xxx        xxx        xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
@@ -199,13 +201,13 @@
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
                                        xxx        xxx        xxx            xxx         xxx         xxx
 //                                  └──────────┴──────────┴──────────┘   └───────────┴───────────┴───────────┘
-			>;
-		};
+      >;
+    };
 
-		num_layer {
-			bindings = <
+    bt_layer {
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-    &kp TILDE    &bt BT_SEL 0   &bt BT_SEL 1     &to DEFAULT  &to WIN     &to  CONF       xxx         xxx         xxx         xxx        xxx        xxx
+    &kp TILDE    &bt BT_SEL 0   &bt BT_SEL 1     &to DEFAULT  &to WIN   &to  CONF       xxx         xxx         xxx         xxx        xxx        &kp N5
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
      xxx         xxx        xxx        xxx        xxx        xxx            xxx         xxx         xxx         xxx        xxx        xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
@@ -215,14 +217,14 @@
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
                                        xxx        xxx        xxx            xxx         xxx         xxx
 //                                  └──────────┴──────────┴──────────┘   └───────────┴───────────┴───────────┘
-			>;
-		};
+      >;
+    };
 
-		nowkey_layer {
+    nowkey_layer {
 
-			bindings = <
+      bindings = <
 // ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
-      xxx         &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0     xxx
+      xxx         &kp N1    &kp N2     &kp N3     &kp N4     &kp N5         &kp N6      &kp N7      &kp N8      &kp N9     &kp N0     &kp N6
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
       xxx      &kp LG(Q)   &dw_mac   &kp LG(E)        &kp LG(R)      &kp LG(T)          &kp LG(Y)       &kp LG(U)       &kp LG(I)       &kp LG(O)      &kp LG(P)      xxx
 // ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
@@ -232,8 +234,24 @@
 // └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
                                   &kp LG(TAB)  &lhm LOWER LG(ESC)  &kp LG(SPACE)     &kp LG(SPACE)    &lhm RAISE LG(RET)  &kp BSPC
 //                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
-			>;
-		};
+      >;
+    };
+    num_layer {
 
-	};
+      bindings = <
+// ┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐   ┌───────────┬───────────┬───────────┬──────────┬──────────┬──────────┐
+      xxx         xxx       xxx        xxx         xxx        xxx            xxx         &kp N7     &kp N8     &kp N9        xxx        &kp N7
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼──────────┼───────────┼──────────┼──────────┤
+      xxx         xxx       xxx        xxx         xxx        xxx            xxx         &kp N4     &kp N5     &kp N6        xxx        xxx
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼──────────┼───────────┼──────────┼──────────┤
+      xxx         xxx       xxx        xxx         xxx       xxx            xxx         &kp N1     &kp N2     &kp N3        xxx        xxx
+// ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┼──────────┼──────────┤
+      xxx         xxx       xxx        xxx         xxx        xxx   ___ ___  xxx         xxx        &kp N0        xxx         xxx        xxx
+// └──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤   ├───────────┼───────────┼───────────┼──────────┴──────────┴──────────┘
+                                  &kp LG(TAB)  &lhm LOWER LG(ESC)  &kp LG(SPACE)     &kp LG(SPACE)    &lhm RAISE LG(RET)  &kp BSPC
+//                                  └──────────┴──────────┴──────────┘   └───────────┴──────────┴────────────┘
+      >;
+    };
+
+  };
 };
